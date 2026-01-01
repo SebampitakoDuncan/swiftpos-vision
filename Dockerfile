@@ -25,7 +25,7 @@ from ultralytics import YOLO
 model_path = "/app/models/yolov8n.onnx"
 if not os.path.exists(model_path):
     model = YOLO("yolov8n.pt")
-    model.export(format="onnx", imgsz=640, simplify=False)
+    model.export(format="onnx", imgsz=640, opset=18, simplify=False)
     if os.path.exists("yolov8n.onnx"):
         os.replace("yolov8n.onnx", model_path)
 PY

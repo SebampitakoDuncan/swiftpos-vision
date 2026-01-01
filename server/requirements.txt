@@ -4,6 +4,6 @@ python-multipart==0.0.9
 pillow==10.3.0
 numpy==1.26.4
 onnxruntime==1.18.1
-onnxscript==0.1.0
+onnxscript==0.2.0
 ultralytics==8.2.47
 streamlit==1.36.0
