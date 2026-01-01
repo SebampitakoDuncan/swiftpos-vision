@@ -42,11 +42,15 @@ Open `http://localhost:3000` and test upload + webcam capture.
 
 ## Deployment notes
 - Frontend: deploy `swiftpos-vision/web` to Vercel.
-- Backend: deploy `swiftpos-vision/server` to Render using `render.yaml` at the repo root.
+- Backend: deploy to a free Hugging Face Space using the provided `Dockerfile`.
 - Set the Vercel env var `NEXT_PUBLIC_INFER_URL` to the FastAPI base URL.
 
-### Render (FastAPI)
-Use Render's Blueprint deploy and select `swiftpos-vision/render.yaml`. It will create a web service that runs `uvicorn main:app`.
+### Hugging Face Spaces (FastAPI)
+1) Create a new Space at https://huggingface.co/spaces and choose **Docker**.
+2) Connect the GitHub repo and select this project.
+3) Keep the default port `7860` (the Dockerfile uses it).
+4) Deploy; after it builds you will get a public URL like `https://<space-name>.hf.space`.
+5) Set `NEXT_PUBLIC_INFER_URL` in Vercel to that URL.
 
 ## Model file
 The repo includes `models/yolov8n.onnx`. If you want to re-export:
