@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+
+# web
+web/node_modules/
+web/.next/
+web/out/
+web/.vercel/
+
+# server
+server/.venv/
+server/__pycache__/
+server/*.pyc
+
+# local logs
+*.log
